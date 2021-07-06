@@ -11,7 +11,7 @@ var contentText = [
 		<div class="sub-subtitle">
 			Screening
 		</div>
-		<div class="cub-content mt-5">
+		<div class="sub-content mt-5">
 			스타트업을 대상으로 아이디어를 접수합니다.<br>
 			각 아이디어를 분석하여 가능성 없는 아이디어를 배제하고<br>
 			서비스를 제공할 아이디어를 뽑는 과정을 거칩니다.
@@ -26,7 +26,7 @@ var contentText = [
 	<div class="sub-subtitle">
 		Selecting Service
 	</div>
-	<div class="cub-content mt-5">
+	<div class="sub-content mt-5">
 		스타트업 진행 정도, 스타트업의 종류,<br>
 		제공하는 서비스의 난이도 차이에 따라<br>
 		서비스를 4단계로 나누어 진행합니다.<br>
@@ -37,9 +37,43 @@ var contentText = [
 	<img src="../img/Service Process/image 72.png" alt="">
 </div>
 </div>`,
-	"스텝 3입니당",
-	"스텝 4입니당",
-	"스텝 5입니당"
+`<div class="row">
+<div class="col-lg-6">
+	<div class="sub-subtitle">
+		Consulting & Deal making
+	</div>
+	<div class="sub-content mt-5">
+		Idad Pool을 접수하고, 시장 검증을 통해 초기 데이터를 생성합니다.<br>
+		데이터를 기반으로 적절한 VC/AC를 분석하여<br>
+		Idea Business와 VC/AC 사이를 조율합니다.<br>
+		또한 아이디어를 정부/지자체, VC/AC, 일반 기업 등으로 전달하여<br>
+		원활하게 대규모 투자가 이루어질 수 있도록 도움을 줍니다.
+	</div>
+</div>
+<div class="col-lg-6 d-flex justify-content-center">
+	<img src="../img/Service Process/image 73.png" alt="">
+</div>
+</div>`,
+`<div class="row">
+<div class="col-lg-6">
+	<div class="sub-subtitle">
+		Securitization
+	</div>
+	<div class="sub-content mt-4">
+		아이디어나 상품에 대해 증권화를 진행합니다.
+	</div>
+	<img class="mt-4" src="../img/Service Process/마켓 1.png">
+</div>
+<div class="col-lg-6 d-flex justify-content-stretch">
+	
+	<img class="mt-4 me-3" src="../img/Service Process/로그인한 후 메인페이지 1.png" style="width: 100%;">
+	
+	
+	<img class="mt-4" src="../img/Service Process/마켓-클릭 (1) 1.png" style="width: 100%;">
+	
+</div>
+</div>`,
+	
 ]
 
 const MAX_STEPS = 4;
