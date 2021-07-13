@@ -228,8 +228,13 @@ text-align: left;
 .mobile-middle{
     justify-content: flex-end;
 }
-@media(min-width:576px){
-
+.announce-height{
+    height: 500px;
+}
+@media(max-width:576px){
+    .announce-height{
+        height: 320px;
+    }
 }
     
  @media(min-width:768px){
