@@ -18,7 +18,7 @@ var contentText = [
 		</div>
 	</div>
 	<div class="col-lg-6 d-flex justify-content-center">
-		<img src="../img/Service Process/image 69.png" alt="">
+		<img style="max-width: 95%" src="../img/Service Process/image 69.png" alt="">
 	</div>
 </div>`,
 `<div class="row">
@@ -34,7 +34,7 @@ var contentText = [
 	</div>
 </div>
 <div class="col-lg-6 d-flex justify-content-center">
-	<img src="../img/Service Process/image 72.png" alt="">
+	<img style="max-width: 95%" src="../img/Service Process/image 72.png" alt="">
 </div>
 </div>`,
 `<div class="row">
@@ -51,25 +51,30 @@ var contentText = [
 	</div>
 </div>
 <div class="col-lg-6 d-flex justify-content-center">
-	<img src="../img/Service Process/image 73.png" alt="">
+	<img style="max-width: 95%" src="../img/Service Process/image 73.png" alt="">
 </div>
 </div>`,
 `<div class="row">
-<div class="col-lg-6">
+<div class="col-lg-4">
 	<div class="sub-subtitle">
 		Securitization
 	</div>
 	<div class="sub-content mt-4">
 		아이디어나 상품에 대해 증권화를 진행합니다.
 	</div>
+	<div class="d-flex justify-content-center">
 	<img class="mt-4" src="../img/Service Process/마켓 1.png">
+	</div>
 </div>
-<div class="col-lg-6 d-flex justify-content-stretch">
-	
-	<img class="mt-4 me-3" src="../img/Service Process/로그인한 후 메인페이지 1.png" style="width: 100%;">
-	
-	
-	<img class="mt-4" src="../img/Service Process/마켓-클릭 (1) 1.png" style="width: 100%;">
+<div class="col-lg-8 d-flex justify-content-center">
+	<div class="row">
+	<div class="col-lg-7 d-flex justify-content-center">
+	<img src="../img/Service Process/로그인한 후 메인페이지 1.png" style="max-width: 100%;">
+	</div>
+	<div class="col-lg-5 d-flex justify-content-center">
+	<img src="../img/Service Process/마켓-클릭 (1) 1.png" style="max-width: 100%;">
+	</div>
+	</div>
 	
 </div>
 </div>`,

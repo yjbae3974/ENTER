@@ -35,7 +35,7 @@
     color: #0b1f43;
 }
 .title{
-    font-size: 32px;
+    font-size: 48px;
     font-family: 'Noto Sans KR', sans-serif;
     text-align: left;
     margin-left: calc(105%/3);
@@ -72,8 +72,7 @@
     color: #c4c4c4
  }
  .container .below-title{
-     --container-margin: calc(100%/6);
-     margin: 0px var(--container-margin);
+     
      border-right: 1px solid #c4c4c4;
      border-left: 1px solid #c4c4c4;
  }
@@ -149,9 +148,15 @@
   .mobile-black{
       color: #fff;
   }
+  @media(max-width: 576px){
+      .mobile-black{
+          color: gray;
+      }
+      
+  }
 @media(min-width:576px){
    .title{
-       font-size: 32px;
+       font-size: 50px;
    }
     .img-ver{
         width: 267px;
@@ -162,7 +167,7 @@
 }
 @media(min-width:768px){
     .title{
-        font-size: 30px;
+        font-size: 68px;
     }
     .img-ver{
         width: 267px;
@@ -224,7 +229,8 @@
         font-size: 85px;
     }
     .below-title{
-        
+            --container-margin: calc(100%/6);
+            margin: 0px var(--container-margin);
     }
     .img-ver{
         width: 490px;
@@ -272,9 +278,7 @@
     .mobile-ml{
         margin-left: 2rem;
     }
-    .mobile-black{
-        color: black;
-    }
+    
     .title{
         color: black;
         margin-left: 0px;
@@ -296,8 +300,9 @@
         .container-f{max-width:960px}
     }@media(min-width:1200px){
         .container-f{max-width:1140px}
-    }@media(min-width:1400px){
+    }@media(max-width:1400px){
         .container-f{max-width:1320px}
+        
     }@media(min-width: 2000px){
         .container-f{max-width: 1920px;}
     }

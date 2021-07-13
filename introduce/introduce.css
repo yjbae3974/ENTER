@@ -140,8 +140,8 @@ text-align: left;
 .img-ver{
     width: 267px;
     height:378px;
-    object-fit: contain;
-    background-color: #c4c4c4;
+    object-fit: cover;
+    
   }
 .dot-1{
     position: absolute;
@@ -150,7 +150,7 @@ text-align: left;
     border-radius: 50%;
     background-color: #17375e;
     opacity: 0.6;
-    right: 50px; 
+    right: -15%; 
     top: -150px;
     z-index: 0;
 }
@@ -160,8 +160,8 @@ text-align: left;
     width: 72px;
     border-radius: 50%;
     background-color: #17375e;
-    
-    right: 608px;
+    top: 600px;
+    right: 20%;
     z-index: 0;
 }
 .dot-3{
@@ -171,7 +171,7 @@ text-align: left;
     border-radius: 50%;
     background-color: #17375e;
     opacity: 0.8;
-    right: 800px;
+    right: 48%;
     top:300px;
 }
 .dot-4{
@@ -252,6 +252,10 @@ text-align: left;
     width: 50%;
     height: 50%;
 }
+.position-rewind{
+    position: relative;
+    top:-150px
+}
 
 @media(min-width:576px){
 
@@ -269,8 +273,8 @@ text-align: left;
  }
  @media(min-width:1200px){
     .img-ver{
-        width: 267px;
-        height:378px;
+        width: 300px;
+        height:400px;
         object-fit: cover;
         background-color: #fff;
       }
@@ -279,8 +283,8 @@ text-align: left;
 
  @media(min-width:1400px){
     .img-ver{
-        width: 267px;
-        height:378px;
+        width: 490px;
+        height:660px;
         object-fit: cover;
         background-color: #fff;
       }
@@ -295,37 +299,7 @@ text-align: left;
         background-color: #fff;
       }
  
-    .dot-1{
-        position: absolute;
-        height: 740px;
-        width: 740px;
-        border-radius: 50%;
-        background-color: #17375e;
-        opacity: 0.6;
-        right: 50px; 
-        top: -150px;
-        z-index: 0;
-    }
-    .dot-2{
-        position: absolute;
-        height: 72px;
-        width: 72px;
-        border-radius: 50%;
-        background-color: #17375e;
-        bottom: -100px;
-        right: 508px;
-        z-index: 0;
-    }
-    .dot-3{
-        position: absolute;
-        height: 72px;
-        width: 72px;
-        border-radius: 50%;
-        background-color: #17375e;
-        opacity: 0.8;
-        right: 900px;
-        top:300px;
-    }
+    
     .img-ver{
         width: 433px;
         height:612px;
@@ -338,6 +312,39 @@ text-align: left;
       #content{
           min-height: 10rem;
       }
+ }
+ @media(max-width: 1200px){
+    .dot-1{
+        position: absolute;
+        height: 540px;
+        width: 540px;
+        border-radius: 50%;
+        background-color: #17375e;
+        opacity: 0.6;
+        right: -15%; 
+        top: -150px;
+        z-index: 0;
+    }
+    .dot-2{
+        position: absolute;
+        height: 72px;
+        width: 72px;
+        border-radius: 50%;
+        background-color: #17375e;
+        top: 600px;
+        right: 43%;
+        z-index: 0;
+    }
+    .dot-3{
+        position: absolute;
+        height: 72px;
+        width: 72px;
+        border-radius: 50%;
+        background-color: #17375e;
+        opacity: 0.8;
+        right: 45%;
+        top:300px;
+    }
  }
  @media(max-width: 992px){
     .mobile-nomar{
@@ -362,6 +369,15 @@ text-align: left;
     .mobile-black{
         color: black;
     }
+    .mobile-mt5{
+        margin-top: 3rem!important;
+    }
+    .mobile-text-center{
+        text-align: center;
+    }
+    .mobile-text-left{
+        text-align: left;
+    }
     .title{
         color: black;
         margin-left: 0px;
@@ -372,6 +388,31 @@ text-align: left;
     .a-link.active{
         color: #bfbfbf !important;
         font-weight: 700;
+    }
+    .dot-2{
+        position: absolute;
+        height: 72px;
+        width: 72px;
+        border-radius: 50%;
+        background-color: #17375e;
+        top: 1000px;
+        right: 95%;
+        z-index: 0;
+    }
+    .dot-3{
+        position: absolute;
+        height: 72px;
+        width: 72px;
+        border-radius: 50%;
+        background-color: #17375e;
+        opacity: 0.8;
+        right: 70%;
+        top:1050px;
+    }
+    .position-rewind{
+        position: initial;
+       margin-top: 50px!important;
+        top:0px;
     }
 }
 @media(max-width:768px){
@@ -435,6 +476,7 @@ text-align: left;
     position: relative;
     bottom: -50px;
     width: 95%;
+    max-width: 100%;
     object-fit:contain;
    
 }
