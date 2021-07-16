@@ -1,0 +1,334 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타포스</title>
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body style="background-color: antiquewhite;">
+    <p class="title text-center" style="margin: 0px">스타포스!!!</p>
+    <div class="container" style="height: 80vh">
+        <div class="d-flex align-items-center justify-content-center" style="height: 100%;">
+            <div class="card text-center p-5" style="width: 580px;height: 930px;border-radius: 1rem;">
+                <p>당신은 성공할 수 있나요?</p>
+                <div class="d-flex justify-content-center">
+                    <img src="img\kangwongi.png" style="width: 80%;" alt="">
+                </div>
+                <div class="mt-3 font-weight-bold" style="font-size: 22px;">현재 몇 성?</div>
+                <div style="font-size: 26px;margin-top: 30px;"><span id="star"></span> 성</div>
+                <div id="chanceTime" style="color: gold;min-height: 18px;"></div>
+                <div class="d-flex mt-5 justify-content-between">
+                    <div class="btn" id="startbtn" onclick="startStarForce()">스타포스 시작</div>
+                    <div class="btn disabled" id="start15" onclick="start(15)">15성부터 시작</div>
+                    <div class="btn disabled" id="start20" onclick="start(20)">20성부터 시작</div>
+                </div>
+                <span id="status" style="min-height: 18px;" class="mt-3 mb-3 status"></span>
+                <div class="mt-3">
+                    현재 성공 확률: <span id="success"></span>%<br>
+                    현재 실패 확률: <span id="failure"></span>%<br>
+                    현재 파괴 확률: <span id="destroy"></span>%<br>
+                    누른 횟수: <span id="numClicked">0</span>회<br>
+                    누적 횟수: <span id="totClicked">0</span>회<br>
+                    22성 도달 횟수: <span id="num22"></span>회
+                    파괴 횟수: <span id="numDestroy"></span>회
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        var starForce = 15;
+        var reach = 0;
+        var cnt = 0;
+        var tot = 0;
+        var clickNum =0;
+        var starNow = document.getElementById('star');
+        var success = document.getElementById('success');
+        var failure = document.getElementById('failure');
+        var destroy = document.getElementById('destroy');
+        var numClicked = document.getElementById('numClicked');
+        var totClicked = document.getElementById('totClicked');
+        var num22 = document.getElementById('num22');
+        var numDestroy = document.getElementById('numDestroy');
+        var chance = document.getElementById('chanceTime');
+        var startbtn = document.getElementById('startbtn');
+        var start_15 = document.getElementById('start15');
+        var start_20 = document.getElementById('start20');
+        var chanceTime = 0;
+        starNow.innerText=starForce;
+        success.innerText=30.0;
+        failure.innerText=67.9;
+        destroy.innerText=2.1;
+        numClicked.innerText=clickNum;
+        totClicked.innerText=tot;
+        num22.innerText=reach;
+        status.innerText='sdfds';
+        numDestroy.innerText = cnt;
+        function startStarForce(){
+            tot++;
+            clickNum++;
+            totClicked.innerText=tot;
+            numClicked.innerText=clickNum;
+            var status = document.getElementById('status');
+            var destiny = Math.random()*100;
+            if(chanceTime === 2){
+                starForce++;
+                numClicked,innerText=clickNum;
+                starNow.innerText=starForce;
+                chance.innerText="";
+                status.innerText='강화에 성공했습니다!';
+                status.style.color='blue';
+                chanceTime = 0;
+                switch(starForce){
+                case 15:
+                case 16:
+                case 17:
+                    success.innerText=30.0;
+                    failure.innerText=67.9;
+                    destroy.innerText=2.1;
+                    break;
+                case 18:
+                case 19:
+                    success.innerText=30.0;
+                    failure.innerText=67.2;
+                    destroy.innerText=2.8;
+                    break;
+                case 20:
+                case 21:
+                    success.innerText=30.0;
+                    failure.innerText=63.0;
+                    destroy.innerText=7.0;
+                    break;
+                case 22:
+                    success.innerText=3.0;
+                    failure.innerText=77.6;
+                    destroy.innerText=19.4;
+                    break;
+                case 23:
+                case 24:
+                    success.innerText=2.0;
+                    failure.innerText=68.6;
+                    destroy.innerText=29.4;
+                    break;
+            }
+                return;
+            }
+          
+            switch(starForce){
+                case 15:
+                case 16:
+                case 17:
+                    if(destiny<=2.1){
+                        status.innerText='파괴되었습니다ㅠㅠ';
+             
+                        status.style.color='grey';
+                        cnt++;
+                        numDestroy.innerText=cnt;
+                        chanceTime = 0;
+                        startbtn.classList.add('disabled');
+                        start_15.classList.remove('disabled');
+                        start_20.classList.remove('disabled');
+                        break;
+                        
+                    }
+                    else if(destiny>2.1&&destiny<=32.1){
+                        status.innerText='강화에 성공했습니다!';
+                        status.style.color='blue';
+                        starForce++;
+                        chanceTime = 0;
+                        break;
+                    }
+                    else{
+                        status.innerText='강화에 실패했습니다';
+                        status.style.color='red';
+                        if(starForce>15){
+                            starForce--;
+                            chanceTime++;
+                        }
+                 
+                   
+                        break;
+                    }
+                case 18:
+                case 19:
+                    
+                    if(destiny<=2.8){
+                        status.innerText='파괴되었습니다ㅠㅠ';
+                        status.style.color='grey';
+                        cnt++;
+                        numDestroy.innerText=cnt;
+                        chanceTime = 0;
+                        startbtn.classList.add('disabled');
+                        start_15.classList.remove('disabled');
+                        start_20.classList.remove('disabled');
+                        break;
+                    }
+                    else if(destiny>2.8&&destiny<=32.8){
+                        status.innerText='강화에 성공했습니다!';
+                        status.style.color='blue';
+                        starForce++;
+                        chanceTime = 0;
+                        break;
+                    }
+                    else{
+                        status.innerText='강화에 실패했습니다';
+                        status.style.color='red';
+                        
+                            starForce--;
+                            chanceTime++;
+                            break;
+                      
+                    }
+                    break;
+                case 20:
+                case 21:
+                    
+                    if(destiny<=7){
+                        status.innerText='파괴되었습니다ㅠㅠ';
+                        status.style.color='grey';
+                        cnt++;
+                        numDestroy.innerText=cnt;
+                        chanceTime = 0;
+                        startbtn.classList.add('disabled');
+                        start_15.classList.remove('disabled');
+                        start_20.classList.remove('disabled');
+                        break;
+                    }
+                    else if(destiny>7&&destiny<=37.0){
+                        status.innerText='강화에 성공했습니다!';
+                        status.style.color='blue';
+                        starForce++;
+                        if(starForce===22){
+                            reach++;
+                            num22.innerText=reach;
+                        } 
+                        chanceTime = 0;
+                        break;
+                    }
+                    else{
+                        status.innerText='강화에 실패했습니다';
+                        status.style.color='red';
+                        if(starForce>20){
+                            starForce--;
+                            chanceTime++;
+                        }
+                        break;
+                    }
+                    
+                case 22:
+                if(destiny<=19.4){
+                        status.innerText='파괴되었습니다ㅠㅠ';
+                        status.style.color='grey';
+                        cnt++;
+                        numDestroy.innerText=cnt;
+                        chanceTime = 0;
+                        startbtn.classList.add('disabled');
+                        start_15.classList.remove('disabled');
+                        start_20.classList.remove('disabled');
+                        break;
+                    }
+                    else if(destiny>19.4&&destiny<=22.4){
+                        status.innerText='강화에 성공했습니다!';
+                        status.style.color='blue';
+                        starForce++;
+                       
+                        chanceTime = 0;
+                        break;
+                    }
+                    else{
+                        status.innerText='강화에 실패했습니다';
+                        status.style.color='red';
+                        
+                            starForce--;
+                            chanceTime++;
+                        
+                            break;
+                    }
+            
+                    case 23:
+                    case 24:
+                    if(destiny<=29.4){
+                        status.innerText='파괴되었습니다ㅠㅠ';
+                        status.style.color='grey';
+                        cnt++;
+                        numDestroy.innerText=cnt;
+                        chanceTime = 0;
+                        startbtn.classList.add('disabled');
+                        start_15.classList.remove('disabled');
+                        start_20.classList.remove('disabled');
+                        break;
+                    }
+                    else if(destiny>29.4&&destiny<=31.4){
+                        status.innerText='강화에 성공했습니다!';
+                        status.style.color='blue';
+                        starForce++;
+                        chanceTime = 0;
+                        break;
+                    }
+                    else{
+                        status.innerText='강화에 실패했습니다';
+                        status.style.color='red';
+                        
+                            starForce--;
+                            chanceTime++;
+                        
+                            break;
+                    }
+                  
+            }
+            switch(starForce){
+                case 15:
+                case 16:
+                case 17:
+                    success.innerText=30.0;
+                    failure.innerText=67.9;
+                    destroy.innerText=2.1;
+                    break;
+                case 18:
+                case 19:
+                    success.innerText=30.0;
+                    failure.innerText=67.2;
+                    destroy.innerText=2.8;
+                    break;
+                case 20:
+                case 21:
+                    success.innerText=30.0;
+                    failure.innerText=63.0;
+                    destroy.innerText=7.0;
+                    break;
+                case 22:
+                    success.innerText=3.0;
+                    failure.innerText=77.6;
+                    destroy.innerText=19.4;
+                    break;
+                case 23:
+                case 24:
+                    success.innerText=2.0;
+                    failure.innerText=68.6;
+                    destroy.innerText=29.4;
+                    break;
+            }
+            if(chanceTime === 2){
+                            chance.innerText="찬스타임!!";
+                            success.innerText=100;
+                            failure.innerText=0;
+                            destroy.innerText=0;
+                        }
+                        starNow.innerText=starForce;
+        }
+        function start(tmp){
+            clickNum=0;
+            starForce = tmp;
+            numClicked.innerText=clickNum;
+            starNow.innerText=starForce;
+            start_15.classList.add('disabled');
+            start_20.classList.add('disabled');
+            startbtn.classList.remove('disabled');
+        }
+    </script>
+</body>
+</html>

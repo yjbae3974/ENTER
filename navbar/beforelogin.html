@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-nav" style="padding: 0px;height: 113px;border-bottom: 2px solid #fff;">
-    <div class="container-fluid bg-nav" style="padding: 10px;max-width: 1320px!important;">
+    <div class="container-fluid bg-nav" style="padding: 10px;max-width: 1320px!important;min-height: 113px">
       
         
           <div class="nav-enter">ENTER</div>
@@ -35,15 +35,17 @@
     
   </nav>
   <!--각 페이지마다 active 추가하는거 하기-->
+  
   <style>
+      .container-fluid.bg-nav{
+      border-bottom: 1px solid #c4c4c4;
+    }
     @media(max-width:992px){
       li.me-5{
         margin-top: 30px;
         margin-bottom: 30px;
       }
-      .collapse.navbar-collapse{
-        border-bottom: 1px solid #fff
-      }
+      
       .a-link{
         color: #fff!important;
       }

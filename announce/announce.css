@@ -231,13 +231,26 @@ text-align: left;
 .announce-height{
     height: 500px;
 }
+.margin-quiz{
+    margin-top: 100px;
+}
 @media(max-width:576px){
     .announce-height{
         height: 320px;
     }
+    .margin-quiz{
+        margin-top: 10px;
+    }
 }
-    
+@media(max-width: 768px){
+    .margin-quiz{
+        margin-top: 20px;
+    }
+}
  @media(min-width:768px){
+    .margin-quiz{
+        margin-top: 40px;
+    }
  }
 
  @media(min-width: 992px){
@@ -251,7 +264,9 @@ text-align: left;
  }
 
  @media(min-width:1400px){
-     
+    .margin-quiz{
+        margin-top: 100px;
+    }
  }
 
  @media(min-width: 2000px){
