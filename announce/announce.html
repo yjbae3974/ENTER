@@ -117,7 +117,7 @@
 	 </script>
 </head>
 <body style="min-height: 100vh;">
-    <div id="load-before"></div>
+    <div id="navbar"></div>
 	  <nav id="navOption" class="sticky-nav">
 		  <div class="container">
 			<ul class="nav nav-tabs d-flex mobile-middle" id="ex1" role="tablist" style="border-bottom: 1px solid #fff;">
@@ -438,8 +438,24 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
+      $("#navbar").load('../navbar/beforelogin.html');
+      var source   = $("#announce-template").html();
+      var adminTemplate = Handlebars.compile(source);
+      var source2   = $("#number-template").html();
+      var numberTemplate = Handlebars.compile(source2);
+      var source3   = $("#question-template").html();
+      var questionTemplate = Handlebars.compile(source3);
+      const contentNum = 4;
+      let collectionName = "announce";
+      let pageName = "announce.html";
+      let currentPage = 1;
+      let maxPage = 1;
 
-      firebase.auth().onAuthStateChanged(function(user) {
+      setViewOptions(adminTemplate, numberTemplate, questionTemplate, collectionName, pageName);
+
+      getAnnounceData(getAnnounceSnapshot(), getCheckData(), currentPage);
+      getQuestionData(getQuestionSnapshot());
+      /*firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             $("#navbar").load('../navbar/afterlogin.html');
             console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
@@ -449,23 +465,7 @@
             // No user is signed in.
             //alert("로그인 X");
           }
-          var source   = $("#announce-template").html();
-          var adminTemplate = Handlebars.compile(source);
-          var source2   = $("#number-template").html();
-          var numberTemplate = Handlebars.compile(source2);
-          var source3   = $("#question-template").html();
-          var questionTemplate = Handlebars.compile(source3);
-          const contentNum = 4;
-          let collectionName = "announce";
-          let pageName = "announce.html";
-          let currentPage = 1;
-          let maxPage = 1;
-
-          setViewOptions(adminTemplate, numberTemplate, questionTemplate, collectionName, pageName);
-
-          getAnnounceData(getAnnounceSnapshot(), getCheckData(), currentPage);
-          getQuestionData(getQuestionSnapshot());
-      });
+      });*/
     });
     $(window).load(function(){
       $('#소통').addClass('active');
