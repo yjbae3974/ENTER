@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter-공지사항</title>
+    <title>Enter-공지사항(임시저장)</title>
 	<!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
 	<!-- Google Fonts Roboto -->
@@ -13,11 +13,49 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
    
-	<link rel="stylesheet" href="announce.css">
+	<link rel="stylesheet" href="../announce/announce.css">
     <link rel="stylesheet" href="checkbox.css">
     <link rel="stylesheet" href="..\css\jquery.accordion.css">
     <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <style>
+
+body{
+  font-family: sans-serif;
+}
+.accordion{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  float: left;
+}
+
+.accordion-title {
+  background-color: #999;
+  color: white;
+  width: 100%;
+  float: left;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.accordion-title.active {
+  background-color: #999;  
+    border-radius: 5px 5px 0 0;
+}
+.accordion-content {
+  display: none;
+  border: 1px solid #999;
+  float: left;
+  width: 100%;
+  padding: 5px;
+}
+
+
+
       th{
         font-weight: 700 !important;
       }
@@ -55,14 +93,6 @@
   color: #bfbfbf!important;
   
 }
-@media(max-width: 768px){
-  .btn-base{
-    font-weight: 700;
-    font-size: 18px;
-    padding: 10px 18px!important;
-    border-radius: 23px;
-  }
-}
 
     </style>
 	 <link rel="stylesheet" href="../css/mdb.min.css" />
@@ -75,11 +105,11 @@
 	 </script>
 </head>
 <body style="min-height: 100vh;">
-    <div id="load-before"></div>
+    <div id="navbar"></div>
 	  <nav id="navOption" class="sticky-nav">
 		  <div class="container">
 			<ul class="nav nav-tabs d-flex justify-content-end" id="ex1" role="tablist" style="border-bottom: 1px solid #fff;">
-				<li class="nav-item" role="presentation" style="max-width: 33%;width: 150px">
+				<li class="nav-item" role="presentation" style="max-width: 50%;width: 150px">
 				  <a
 					class="nav-link active text-center tabcolor"
 					id="ex1-tab-1"
@@ -93,7 +123,7 @@
 					>공지사항</a
 				  >
 				</li>
-				<li class="nav-item" role="presentation" style="max-width: 33%;width: 150px">
+				<li class="nav-item" role="presentation" style="max-width: 50%;width: 150px">
 				  <a
 					class="nav-link text-center tabcolor"
 					id="ex1-tab-2"
@@ -108,60 +138,76 @@
 				  >
 				  
 				</li>
-                <li class="nav-item" role="presentation" style="max-width: 33%;width: 150px">
-                    <a
-                      class="nav-link text-center tabcolor"
-                      id="ex1-tab-2"
-                      data-mdb-toggle="tab"
-                      data-toggle="tab"
-                      href="#ex1-tabs-3"
-                      role="tab"
-                      aria-controls="ex1-tabs-3"
-                      aria-selected="false"
-                      style="font-size: 16px; font-weight: 900;"
-                      >문의사항</a
-                    >
-                    
-                  </li>
+          <li class="nav-item" role="presentation" style="max-width: 50%;width: 150px">
+              <a
+                class="nav-link text-center tabcolor"
+                id="ex1-tab-2"
+                data-mdb-toggle="tab"
+                data-toggle="tab"
+                href="#ex1-tabs-3"
+                role="tab"
+                aria-controls="ex1-tabs-3"
+                aria-selected="false"
+                style="font-size: 16px; font-weight: 900;"
+                >문의사항</a
+              >
+              
+            </li>
 				
 			  </ul>
 		  </div>
 		
 	  </nav>
-      <div class="tab-content" id="ex1-content" style="min-height: 100vh;">
+      <div class="tab-content" id="ex1-content" style="min-height: 90vh;">
         <div
         class="tab-pane fade show active"
         id="ex1-tabs-1"
         role="tabpanel"
         aria-labelledby="ex1-tab-1"
       >
-        <div class="container-fluid bg-click d-flex align-items-center" style="margin-top: 113px; min-height: 400px;">
-            <div class="container" style="height: 100%;">
-                <span id = "type"></span>  
-                <p class="title mb-4 mt-4" id = "title" style="color: #060B11;font-weight: 500;"><!--여기에 제목 들어감-->
-                     
-                </p>
-                <p style="color: #bfbfbf;" id="created"></p><!--여기에 날짜-->
-            <div>
-
+        
+      <div class="container d-flex justify-content-center" style="margin-top: 300px;">
+        
+        <div class="col-xl-12" style="max-width: 1280px;">
+            <p style="color: #060B11;font-weight: 700;font-size: 18px;">임시저장</p>
+          <div class="table-responsive text-nowrap">
+              <!--Table-->
+              <table class="table table-hover">
+      
+                <!--Table head-->
+                <thead class="bg-gray">
+                  <tr>
+                    <th>분류</th>
+                    <th>제목</th>
+                    <th>날짜</th>
+                    <th></th>
+                    
+                  </tr>
+                </thead>
+                <!--Table head-->
+      
+                <!--Table body-->
+                <tbody id="content-placeholder"></tbody>
+      
+              </table>
+              <!--Table-->
             </div>
+            <div class="d-flex justify-content-end align-items-center" style="color: #8c8c8c;">
+              <div class="mx-5 clickable" id="toAdmin">공지사항으로</div>                  <!--이부분 숫자 수정 요망-->
+              <div class="btn-base" id="toEdit" style="padding: 8px 16px;">글쓰기</div>
             </div>
-        </div>
-        <div class="container d-flex align-items-center" style="margin-top: 100px;line-height: 2rem;min-height: 475px;border-bottom: 1px solid #8c8c8c;border-top: 1px solid #8c8c8c;"><!--여기 내부는 summernote에서 적히는 코드 그대로 따라 쓰면 될듯-->
-          <div id = "summernote"></div>
-        </div>
-        <div class="d-flex justify-content-center" style="margin-top: 50px;">
-            <div class="btn-base" style="padding: 12px 32px" onclick="changeLocation('announce.html')">목록</div>
-
-        </div>
+          </div>
+          
+      </div>
+        
+      <div class="container mt-5 d-flex justify-content-center" id="number-placeholder"></div>
         
       </div><!--여기까지 tab1-->
       <div
         class="tab-pane fade show"
         id="ex1-tabs-2"
         role="tabpanel"
-        aria-labelledby="ex1-tab-2"
-      >
+        aria-labelledby="ex1-tab-2">
       <div class="container-fluid bg-announce d-flex align-items-center" style="margin-top: 113px; min-height: 500px;">
         <div class="container col-xl-4 col-lg-6 col-md-8 d-flex justify-content-center align-items-center" style="height: 100%;flex-direction: column;">
             <p class="title mb-5 mt-5">
@@ -185,82 +231,10 @@
         </div>
         
     </div>
-    <div class="container" style="margin-top: 100px;">
-      <section id="single" data-accordion>
-        <button data-control>자주하는 질문(1)</button>
-        <div data-content>
-          <article>Item</article>
-          
-        </div>
-      </section>
-      <section id="single" data-accordion>
-        <button data-control>자주하는 질문(2)</button>
-        <div data-content>
-          <article>Item</article>
-         
-        </div>
-      </section>
-      <section id="single" data-accordion>
-        <button data-control>자주하는 질문(3)</button>
-        <div data-content>
-          <article>Item</article>
-         
-        </div>
-      </section>
-      <section id="single" data-accordion>
-        <button data-control>자주하는 질문(4)</button>
-        <div data-content>
-          <article>Item</article>
-         
-        </div>
-      </section>
-      <section id="single" data-accordion>
-        <button data-control>자주하는 질문(5)</button>
-        <div data-content>
-          <article>Item</article>
-         
-        </div>
-      </section>
-      <section id="single" data-accordion>
-        <button data-control>자주하는 질문(6)</button>
-        <div data-content>
-          <article>Item</article>
-         
-        </div>
-      </section>
-      <section id="single" data-accordion>
-        <button data-control>자주하는 질문(7)</button>
-        <div data-content>
-          <article>Item</article>
-         
-        </div>
-      </section>
-      <section id="single" data-accordion>
-        <button data-control>자주하는 질문(8)</button>
-        <div data-content>
-          <article>Item</article>
-         
-        </div>
-      </section>
-      <section id="single" data-accordion>
-        <button data-control>자주하는 질문(9)</button>
-        <div data-content>
-          <article>Item</article>
-         
-        </div>
-      </section>
-      <section id="single" data-accordion>
-        <button data-control>자주하는 질문(10)</button>
-        <div data-content>
-          <article>Item</article>
-         
-        </div>
-      </section>
-    </div>
     
-    
-  
+    <div class="container" style="margin-top: 100px;" id="question-placeholder"></div>
       </div>
+    
       <div
         class="tab-pane fade show"
         id="ex1-tabs-3"
@@ -368,7 +342,7 @@
           </div>
         </div>
     </div><!--container end-->
-    <div class="container-fluid mobile-nopad" style="height: 480px;margin-top: 100px;">
+    <div class="container-fluid" style="height: 480px;margin-top: 100px;">
       <div id="map" style="height: 100%;"></div>
     </div>
       </div>
@@ -379,22 +353,11 @@
     
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
-	<script src="announce.js"></script>
+	
   <script src="..\js\jquery.accordion.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      $("#load-before").load('../navbar/beforelogin.html');
-      $('#load-after').load('../navbar/afterlogin.html');
-      $('#only-one [data-accordion]').accordion();
-
-      $('#multiple [data-accordion]').accordion({
-        singleOpen: false
-      });
-
-      $('#single[data-accordion]').accordion({
-        transitionEasing: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
-        transitionSpeed: 200
-      });
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       var firebaseConfig = {
@@ -411,20 +374,74 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
 
-      value = decodeURI(window.location.search).substr(1)
-      
-      if(value!=null || value!=""){
-        getContent(value);
-      }
+      firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            $("#navbar").load('../navbar/afterlogin.html');
+            console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
+            //window.history.back();
+          } else {
+            $("#navbar").load('../navbar/beforelogin.html');
+            // No user is signed in.
+            //alert("로그인 X");
+          }
+      });
+      var source   = $("#announce-template").html();
+      var adminTemplate = Handlebars.compile(source);
+      var source2   = $("#number-template").html();
+      var numberTemplate = Handlebars.compile(source2);
+      var source3   = $("#question-template").html();
+      var questionTemplate = Handlebars.compile(source3);
+      const contentNum = 4;
+      let collectionName = "autosave";
+      let pageName = "autosave.html";
+      let currentPage = 1;
+      let maxPage = 1;
+
+      setViewOptions(adminTemplate, numberTemplate, questionTemplate, collectionName, pageName);
+
+      getAutosaveData(getAnnounceSnapshot(), currentPage);
+      getQuestionData(getQuestionSnapshot());
     });
     $(window).load(function(){
       $('#소통').addClass('active');
+      $('#only-one [accordion]').accordion({
+        autoheight: false
+      });
+
+      $('#multiple [accordion]').accordion({
+        singleOpen: false,
+        autoheight: false
+      });
+
+      $('#single[accordion]').accordion({
+        transitionEasing: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
+        transitionSpeed: 200,
+        autoheight: false
+      });
     });
+
+
+    
   </script>
   <script async
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC33JiJfsCheBCOLJbPiMKqf19OxnkKyyE&callback=initMap">
-</script>zzz
+</script>
 </body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!--<script src="/__/firebase/8.6.8/firebase-app.js"></script>
+
+  <script src="/__/firebase/8.6.8/firebase-analytics.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+  <script src="/__/firebase/init.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>-->
+
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
 
@@ -434,41 +451,83 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
+<script src="admin.js"></script>
+<script src="admin_announce.js"></script>
+<script src="admin_question.js"></script>
+
+<script id="announce-template" type="text/x-handlebars-template">
+  
+  {{#contents}}
+  <tr>
+    <th scope="row">[{{type}}]</th>
+    <td>{{title}}</td>
+    <td>{{created}} </td><!--정렬은 날짜순-->
+    <td>
+      <a class="edit" href="edit.html?{{title}}"><i class="fas fa-edit"></i></a><!--기존에 썼던 데이터 옮겨지면서 edit페이지로 넘어감-->
+      <a class="edit"><i class="fas fa-trash-alt" id="{{title}}" onclick="deleteDoc(this.id);"></i></a><!--이 행을 아예 삭제-->
+    </td>
+  </tr>
+  {{/contents}}
+</script>
+
+<script id="number-template" type="text/x-handlebars-template">
+  <nav aria-label="...">
+    <ul class="pagination pagination-circle">
+      <li class="page-item">
+        <a class="page-link" tabindex="-1" aria-disabled="true" onclick="firstPage(getAllCheck());">&lt&lt</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" tabindex="-1" aria-disabled="true" onclick="prevPage(getAllCheck());">&lt</a>
+      </li>
+
+      {{#contents}}
+      <li class="page-item {{#if active}}active{{/if}}">
+        <a class="page-link" aria-current="page" id="{{num}}" onclick="getAnnounceData(getAnnounceSnapshot(), getAllCheck(), this.id);">{{num}}</a>
+      </li>
+      {{/contents}}
+
+      <li class="page-item">
+        <a class="page-link" onclick="nextPage(getAllCheck());">&gt</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" onclick="lastPage(getAllCheck());">&gt&gt</a>
+      </li>
+    </ul>
+  </nav>
+</script>
+
+<script id="question-template" type="text/x-handlebars-template">
+  <div class="container" style="margin-top: 100px; overflow:auto;">
+    {{#contents}}
+    <section class="accordion">
+      <button class="accordion-title">
+        <div class="col-10"><div class="click2edit" id="title{{num}}"></div></div>
+      </button>
+      <div class="accordion-content">
+        <article class="article2edit">
+          <div class="row">
+            <div class="col-10">
+              <div class="click2edit" id="content{{num}}"></div>
+            </div>
+            <div class="col-2 d-flex justify-content-end">
+                  <button class="edit" onclick="edit('{{num}}');"><i class="fas fa-edit"></i><div id="visible{{num}}" style="font-size: 9px;"></div></button>
+                  <button class="edit" onclick="submitQuestion(myTitle('{{num}}'), '{{num}}', myContent('{{num}}'));"><i class="far fa-save"></i><div style="font-size: 9px;">save</div></button>
+                  <button class="edit" onclick="deleteQuestion(myTitle('{{num}}'), '{{num}}')"><i class="fas fa-trash-alt"></i><div style="font-size: 9px;">del</div></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    {{/contents}}
+  </div>
+
+  <div class="d-flex justify-content-center" style="color: #8c8c8c; margin-top: 40px; margin-bottom: 40px;">
+    <div class="clickable" style="font-size: 18px;" onclick="addQuestion();"><span style="font-weight: 700;">+</span> 추가답변 작성하기</div>
+  </div>
+</script>
 
 <script>
 
-function getContent(title){
-    var db = firebase.firestore();
-    var docRef = db.collection("announce").doc(title);
-    docRef.get().then((doc) => {
-        if (doc.exists) {
-            console.log("Document data:", doc.data());
-            document.getElementById('title').innerHTML = doc.get("title");
-            document.getElementById("type").innerHTML = "["+doc.get("type")+"]";
-            document.getElementById("created").innerHTML = getFormattedDate(doc.get("created").toDate());
-            document.getElementById('summernote').innerHTML = doc.get("content");
-        } else {
-            alert("글이 존재하지 않습니다.");
-            window.location.href="admin.html";
-        }
-    }).catch((error) => {
-        console.log("Error getting document:", error);
-    });
-}
-
-function getFormattedDate(d){
-  var days = ['일','월','화','수','목','금','토'];
-
-  var date = new Date(d)
-  var yyyy = date.getFullYear()
-  var mm = String(date.getMonth() + 1).padStart(2, '0')
-  var dd = String(date.getDate()).padStart(2, '0')
-  var day = "("+ days[date.getDay()] +")"
-  var hh = String(date.getHours()).padStart(2, '0')
-  var MM = String(date.getMinutes()).padStart(2, '0')
-  
-  var formatted_date = yyyy + "-" + mm + "-" + dd + day + " " + hh + ":" + MM;
-  return formatted_date;
-}
 </script>
+</html>
