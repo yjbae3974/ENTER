@@ -6,7 +6,7 @@ let maxPage = 1;
 
 
 function setViewOptions(admin, number, question, collection, page){
-    adminTemplate = admin;
+    announceTemplate = admin;
     numberTemplate = number;
     questionTemplate = question;
     collectionName = collection;
@@ -100,7 +100,7 @@ function getAnnounceData(Snapshots, check, num){
       var type = doc.get("type");
       var title = doc.get("title");
       var content = doc.get("content");
-  
+
       if(check[type]){
         if(wordSearch(wordSplit, title) || wordSearch(wordSplit, content)){
             var temp = new Object();
@@ -131,7 +131,7 @@ function makeAnnounceTable(dataArray, num){
 
     const data = new Object();
     data.contents = adminArray;
-    $("#content-placeholder").html(adminTemplate(data));
+    $("#content-placeholder").html(announceTemplate(data));
 
     const data2 = new Object();
     data2.contents = numberArray(dataArray.length, num);

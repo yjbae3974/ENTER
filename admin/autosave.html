@@ -386,7 +386,7 @@ body{
           }
       });
       var source   = $("#announce-template").html();
-      var adminTemplate = Handlebars.compile(source);
+      var announceTemplate = Handlebars.compile(source);
       var source2   = $("#number-template").html();
       var numberTemplate = Handlebars.compile(source2);
       var source3   = $("#question-template").html();
@@ -397,7 +397,7 @@ body{
       let currentPage = 1;
       let maxPage = 1;
 
-      setViewOptions(adminTemplate, numberTemplate, questionTemplate, collectionName, pageName);
+      setViewOptions(announceTemplate, numberTemplate, questionTemplate, collectionName, pageName);
 
       getAutosaveData(getAnnounceSnapshot(), currentPage);
       getQuestionData(getQuestionSnapshot());
