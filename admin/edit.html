@@ -207,8 +207,8 @@
           style="border-radius: 10em; width: 100%;">
           <div class="card-body p-2">
             <div class="input-group input-group-lg">
-              <input type="text" class="form-control form-control-lg rounde bg-transparent " style="border: 0px !important;"
-                placeholder="검색어를 입력하세요" aria-label="Type Keywords" aria-describedby="basic-addon2" />
+              <input type="text" id="searchWord2" class="form-control form-control-lg rounde bg-transparent" style="border: 0px !important;"
+              placeholder="검색어를 입력하세요" aria-label="Type Keywords" aria-describedby="basic-addon2" />
               <span class="input-group-text border-0" id="basic-addon2"><i
                   class="fas fa-search fa-lg"></i></span>
             </div>
@@ -361,7 +361,7 @@
           ['insert', ['link', 'picture', 'video']],
           ['view', ['fullscreen', 'codeview', 'help']]
         ]
-      });      
+      });
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       var firebaseConfig = {
@@ -378,22 +378,13 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
 
-      firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            $("#navbar").load('../navbar/afterlogin.html');
-            console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
-            //window.history.back();
-          } else {
-            $("#navbar").load('../navbar/beforelogin.html');
-            // No user is signed in.
-            //alert("로그인 X");
-          }
-      });
+      $("#navbar").load('../navbar/beforelogin.html');
       getQuestionData(getQuestionSnapshot());
       value = decodeURI(window.location.search).substr(1)
       if(value!=null || value!=""){
+         console.log(value);
          getContent(value);
-      }
+      }      
     });
     $(window).load(function(){
       $('#소통').addClass('active');
@@ -463,11 +454,10 @@
 </script>
 
 <script>
-  
-var source3   = $("#question-template").html();
-var questionTemplate = Handlebars.compile(source3);
-let collectionName = "announce";
-let pageName = "admin.html";
+  var source3   = $("#question-template").html();
+  var questionTemplate = Handlebars.compile(source3);
+  //var collectionName = "announce";
+  //var pageName = "admin.html";
 
 </script>
 </html>

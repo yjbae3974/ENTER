@@ -1,5 +1,5 @@
-let collectionName = "announce";
-let pageName = "admin.html";
+var collectionName = "announce";
+var pageName = "admin.html";
 const contentNum = 4;
 let currentPage = 1;
 let maxPage = 1;
