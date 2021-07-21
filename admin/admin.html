@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter-공지사항</title>
+    <title>Enter-공지사항(admin)</title>
 	<!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
 	<!-- Google Fonts Roboto -->
@@ -13,13 +13,17 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
    
-	<link rel="stylesheet" href="announce.css">
+	<link rel="stylesheet" href="../announce/announce.css">
     <link rel="stylesheet" href="checkbox.css">
     <link rel="stylesheet" href="..\css\jquery.accordion.css">
     <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="admin.css">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <style>
 
+body{
+  font-family: sans-serif;
+}
 .accordion{
   width: 100%;
   padding: 10px;
@@ -50,18 +54,13 @@
   padding: 5px;
 }
 
-      
+
+
       th{
         font-weight: 700 !important;
       }
-      .nav-tabs .nav-link{
-        padding: 17px 0px!important;
-      }
-		@media(max-width: 768px){
-      .title{
-        align-self: flex-start;
-      }
-    }
+      
+		
 		a.active.tabcolor{color: #17375E!important;border-bottom: solid #17375E!important;}
 	.nav-title{
 		color: #fff;
@@ -94,17 +93,6 @@
   color: #bfbfbf!important;
   
 }
-@media(max-width: 576px){
-  .form-control::placeholder{
-    font-size: 18px;
-  }
-  .card-body{
-    height: 42px;
-  }
-  .input-group-lg{
-    top: -10px;
-  }
-}
 
     </style>
 	 <link rel="stylesheet" href="../css/mdb.min.css" />
@@ -120,8 +108,8 @@
     <div id="navbar"></div>
 	  <nav id="navOption" class="sticky-nav">
 		  <div class="container">
-			<ul class="nav nav-tabs d-flex mobile-middle" id="ex1" role="tablist" style="border-bottom: 1px solid #fff;">
-				<li class="nav-item" role="presentation" style="max-width: 33%;width: 150px">
+			<ul class="nav nav-tabs d-flex justify-content-end" id="ex1" role="tablist" style="border-bottom: 1px solid #fff;">
+				<li class="nav-item" role="presentation" style="max-width: 50%;width: 150px">
 				  <a
 					class="nav-link active text-center tabcolor"
 					id="ex1-tab-1"
@@ -135,7 +123,7 @@
 					>공지사항</a
 				  >
 				</li>
-				<li class="nav-item" role="presentation" style="max-width: 33%;width: 150px">
+				<li class="nav-item" role="presentation" style="max-width: 50%;width: 150px">
 				  <a
 					class="nav-link text-center tabcolor"
 					id="ex1-tab-2"
@@ -150,21 +138,21 @@
 				  >
 				  
 				</li>
-                <li class="nav-item" role="presentation" style="max-width: 33%;width: 150px">
-                    <a
-                      class="nav-link text-center tabcolor"
-                      id="ex1-tab-2"
-                      data-mdb-toggle="tab"
-                      data-toggle="tab"
-                      href="#ex1-tabs-3"
-                      role="tab"
-                      aria-controls="ex1-tabs-3"
-                      aria-selected="false"
-                      style="font-size: 16px; font-weight: 900;"
-                      >문의사항</a
-                    >
-                    
-                  </li>
+          <li class="nav-item" role="presentation" style="max-width: 50%;width: 150px">
+              <a
+                class="nav-link text-center tabcolor"
+                id="ex1-tab-2"
+                data-mdb-toggle="tab"
+                data-toggle="tab"
+                href="#ex1-tabs-3"
+                role="tab"
+                aria-controls="ex1-tabs-3"
+                aria-selected="false"
+                style="font-size: 16px; font-weight: 900;"
+                >문의사항</a
+              >
+              
+            </li>
 				
 			  </ul>
 		  </div>
@@ -177,8 +165,8 @@
         role="tabpanel"
         aria-labelledby="ex1-tab-1"
       >
-      <div class="container-fluid bg-announce d-flex align-items-center announce-height" style="margin-top: 113px;">
-        <div class="container col-xxl-4 col-xl-5 col-lg-6 col-md-8 d-flex justify-content-center align-items-center" style="height: 100%;flex-direction: column;">
+        <div class="container-fluid bg-announce d-flex align-items-center" style="margin-top: 113px; min-height: 500px;">
+            <div class="container col-xl-4 col-lg-6 col-md-8 d-flex justify-content-center align-items-center" style="height: 100%;flex-direction: column;">
                 <p class="title mb-5 mt-5">
                     공지사항
                 </p>
@@ -220,22 +208,46 @@
             </div>
             </div>
         </div>
-        <div class="container d-flex justify-content-center">
-          <div class="col-xl-12" style="width: 100%;max-width: 1280px;">
-            <div class="table-responsive text-nowrap" id="content-placeholder">
+        <div class="container d-flex justify-content-center" style="margin-top: 100px;">
+          <div class="col-xl-12" style="max-width: 1280px;">
+            <div class="table-responsive text-nowrap">
+              <!--Table-->
+              <table class="table table-hover">
+      
+                <!--Table head-->
+                <thead class="bg-gray">
+                  <tr>
+                    <th>분류</th>
+                    <th>제목</th>
+                    <th>날짜</th>
+                    <th></th>
+                    
+                  </tr>
+                </thead>
+                <!--Table head-->
+      
+                <!--Table body-->
+                <tbody id="content-placeholder"></tbody>
+      
+              </table>
+              <!--Table-->
+            </div>
+            <div class="d-flex justify-content-end align-items-center" style="color: #8c8c8c;">
+              <div class="mx-5 clickable" id="toSave">임시저장 목록으로</div>                  <!--이부분 숫자 수정 요망-->
+              <div class="btn-base" id="toEdit" style="padding: 8px 16px;">글쓰기</div>
             </div>
           </div>
-          <!--이 부분 모바일 파튼데 모바일 파트도 부탁합니당.-->
-
+          
         </div>
+        
         <div class="container mt-5 d-flex justify-content-center" id="number-placeholder"></div>
+        
       </div><!--여기까지 tab1-->
       <div
         class="tab-pane fade show"
         id="ex1-tabs-2"
         role="tabpanel"
-        aria-labelledby="ex1-tab-2"
-      >
+        aria-labelledby="ex1-tab-2">
       <div class="container-fluid bg-announce d-flex align-items-center" style="margin-top: 113px; min-height: 500px;">
         <div class="container col-xl-4 col-lg-6 col-md-8 d-flex justify-content-center align-items-center" style="height: 100%;flex-direction: column;">
             <p class="title mb-5 mt-5">
@@ -245,12 +257,10 @@
           style="border-radius: 10em; width: 100%;">
           <div class="card-body p-2">
             <div class="input-group input-group-lg">
-              <div class="input-group input-group-lg">
-                <input type="text" id="searchWord2" class="form-control form-control-lg rounde bg-transparent" style="border: 0px !important;"
-                  placeholder="검색어를 입력하세요" aria-label="Type Keywords" aria-describedby="basic-addon2" />
-                <span class="input-group-text border-0" id="basic-addon2" onclick="getQuestionData(getQuestionSnapshot());">
-                  <i class="fas fa-search fa-lg"></i></span>
-                </div>
+                  <input type="text" id="searchWord2" class="form-control form-control-lg rounde bg-transparent" style="border: 0px !important;"
+                    placeholder="검색어를 입력하세요" aria-label="Type Keywords" aria-describedby="basic-addon2" />
+                  <span class="input-group-text border-0" id="basic-addon2" onclick="getQuestionData(getQuestionSnapshot());">
+                    <i class="fas fa-search fa-lg"></i></span>
             </div>
           </div>
         </div>
@@ -261,9 +271,11 @@
         </div>
         
     </div>
+    
     <div class="container" style="margin-top: 100px;" id="question-placeholder"></div>
-  
       </div>
+    
+
       <div
         class="tab-pane fade show"
         id="ex1-tabs-3"
@@ -371,7 +383,7 @@
           </div>
         </div>
     </div><!--container end-->
-    <div class="container-fluid mobile-nopad" style="height: 480px;margin-top: 100px;">
+    <div class="container-fluid" style="height: 480px;margin-top: 100px;">
       <div id="map" style="height: 100%;"></div>
     </div>
       </div>
@@ -382,24 +394,11 @@
     
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
-	<script src="announce.js"></script>
+	
   <script src="..\js\jquery.accordion.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      $('.hr-link').click(function(){
-        location.href = 'announce_onclick.html';
-      });
-      $('#only-one [data-accordion]').accordion();
-
-      $('#multiple [data-accordion]').accordion({
-        singleOpen: false
-      });
-
-      $('#single[data-accordion]').accordion({
-        transitionEasing: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
-        transitionSpeed: 200
-      });
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       var firebaseConfig = {
@@ -415,37 +414,8 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
-      $("#navbar").load('../navbar/beforelogin.html');
 
-      const mobileWidth = '(max-width: 768px)';
-      const mediaQuery = window.matchMedia(mobileWidth);
-      const divtable = document.getElementById('tablediv');
-      if(mediaQuery.matches){
-        console.log('now the width is smaller than 768');
-        var source   = $("#announce-template-mobile").html();
-      var announceTemplate = Handlebars.compile(source);
-      }
-      else{
-        console.log('now the width is larger than 768');
-        var source   = $("#announce-template").html();
-      var announceTemplate = Handlebars.compile(source);
-        
-      }
-      var source2   = $("#number-template").html();
-      var numberTemplate = Handlebars.compile(source2);
-      var source3   = $("#question-template").html();
-      var questionTemplate = Handlebars.compile(source3);
-      const contentNum = 4;
-      let collectionName = "announce";
-      let pageName = "announce.html";
-      let currentPage = 1;
-      let maxPage = 1;
-
-      setViewOptions(announceTemplate, numberTemplate, questionTemplate, collectionName, pageName);
-
-      getAnnounceData(getAnnounceSnapshot(), getCheckData(), currentPage);
-      getQuestionData(getQuestionSnapshot());
-      /*firebase.auth().onAuthStateChanged(function(user) {
+      firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             $("#navbar").load('../navbar/afterlogin.html');
             console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
@@ -455,11 +425,44 @@
             // No user is signed in.
             //alert("로그인 X");
           }
-      });*/
+      });
+      var source   = $("#announce-template").html();
+      var announceTemplate = Handlebars.compile(source);
+      var source2   = $("#number-template").html();
+      var numberTemplate = Handlebars.compile(source2);
+      var source3   = $("#question-template").html();
+      var questionTemplate = Handlebars.compile(source3);
+      const contentNum = 4;
+      let collectionName = "announce";
+      let pageName = "admin.html";
+      let currentPage = 1;
+      let maxPage = 1;
+
+      setViewOptions(announceTemplate, numberTemplate, questionTemplate, collectionName, pageName);
+
+      getAnnounceData(getAnnounceSnapshot(), getCheckData(), currentPage);
+      getQuestionData(getQuestionSnapshot());
     });
     $(window).load(function(){
       $('#소통').addClass('active');
+      $('#only-one [accordion]').accordion({
+        autoheight: false
+      });
+
+      $('#multiple [accordion]').accordion({
+        singleOpen: false,
+        autoheight: false
+      });
+
+      $('#single[accordion]').accordion({
+        transitionEasing: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
+        transitionSpeed: 200,
+        autoheight: false
+      });
     });
+
+
+    
   </script>
   <script async
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC33JiJfsCheBCOLJbPiMKqf19OxnkKyyE&callback=initMap">
@@ -490,52 +493,25 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
-<script src="../admin/admin_announce.js"></script>
-<script src="announce_question.js"></script>
+<script src="admin.js"></script>
+<script src="admin_announce.js"></script>
+<script src="admin_question.js"></script>
 
 <script id="announce-template" type="text/x-handlebars-template">
-    <!--Table-->
-    <table class="table table-hover">
-
-      <!--Table head-->
-      <thead class="bg-gray">
-        <tr>
-          <th>분류</th>
-          <th>제목</th>
-          <th>날짜</th>          
-        </tr>
-      </thead>
-      <!--Table head-->
-
-      <!--Table body-->
-      {{#contents}}
-          <tr>
-              <th scope="row">[{{type}}]</th>
-              <td class="hr-link" id="{{title}}" onclick="openDoc(this.id)">{{title}}</td>
-              <td>{{created}} </td><!--정렬은 날짜순-->
-          </tr>
-      {{/contents}}
-      <!--Table body-->
-    </table>
-    <!--Table-->
+  
+  {{#contents}}
+  <tr>
+    <th scope="row">[{{type}}]</th>
+    <td>{{title}}</td>
+    <td>{{created}} </td><!--정렬은 날짜순-->
+    <td>
+      <a class="edit" href="edit.html?{{title}}"><i class="fas fa-edit"></i></a><!--기존에 썼던 데이터 옮겨지면서 edit페이지로 넘어감-->
+      <a class="edit"><i class="fas fa-trash-alt" id="{{title}}" onclick="deleteDoc(this.id);"></i></a><!--이 행을 아예 삭제-->
+    </td>
+  </tr>
+  {{/contents}}
 </script>
 
-<script id="announce-template-mobile" type="text/x-handlebars-template">
-    <section id="tablediv"><!--id="tablediv"-->
-      <hr>
-      {{#contents}}
-      <div style="padding: 0px 24px;">
-        <div class="list-title">
-          [{{type}}]
-        </div>
-        <div class="list-content hr-link" id="{{title}}" onclick="openDoc(this.id)">
-          {{title}}
-        </div>
-        <hr>
-      </div>
-      {{/contents}}
-    </section>
-</script>
 
 <script id="number-template" type="text/x-handlebars-template">
   <nav aria-label="...">
@@ -577,6 +553,9 @@
               <div class="click2edit" id="content{{num}}"></div>
             </div>
             <div class="col-2 d-flex justify-content-end">
+                  <button class="edit" onclick="edit('{{num}}');"><i class="fas fa-edit"></i><div id="visible{{num}}" style="font-size: 9px;"></div></button>
+                  <button class="edit" onclick="submitQuestion(myTitle('{{num}}'), '{{num}}', myContent('{{num}}'));"><i class="far fa-save"></i><div style="font-size: 9px;">save</div></button>
+                  <button class="edit" onclick="deleteQuestion(myTitle('{{num}}'), '{{num}}')"><i class="fas fa-trash-alt"></i><div style="font-size: 9px;">del</div></button>
             </div>
           </div>
         </article>
@@ -584,7 +563,9 @@
     </section>
     {{/contents}}
   </div>
+
   <div class="d-flex justify-content-center" style="color: #8c8c8c; margin-top: 40px; margin-bottom: 40px;">
+    <div class="clickable" style="font-size: 18px;" onclick="addQuestion();"><span style="font-weight: 700;">+</span> 추가답변 작성하기</div>
   </div>
 </script>
 

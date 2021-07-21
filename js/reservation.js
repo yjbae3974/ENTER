@@ -15,6 +15,10 @@ window.addEventListener('scroll',(event) => {
       animateValue(obj_3, 0, 1053, 2000);
       triggered = true
     }
+    if ($(window).scrollTop() < 10) {
+      console.log($(window).scrollTop());
+      triggered = false
+    }
 });
 
 function animateValue(obj, start, end, duration) {
