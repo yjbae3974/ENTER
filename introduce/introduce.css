@@ -68,7 +68,7 @@ body{
     background-color: #17375e;
 }
 .disabled{
-    display: none;
+    background-color:#e5e5e5 ;
 }
 .appear{
 
@@ -546,5 +546,19 @@ text-align: left;
 @media(max-width: 1200px){
     .title{
         font-size: 60px;
+    }
+}
+@media(max-width: 576px){
+    .title{
+        font-size: 35px!important;
+    }
+    .sub-title{
+        font-size: 22px;
+    }
+    .sub-content{
+        font-size: 12px;
+    }
+    .sub{
+        font-size: 16px!important;
     }
 }

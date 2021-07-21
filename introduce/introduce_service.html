@@ -20,10 +20,53 @@
 	.nav-title{
 		color: #fff
 	}
+	.box-img-2{
+		max-width: 100%;
+	}
+	.karlxyz{
+		padding: 120px 60px;
+	}
+	.kyu-img{
+		width: 100%;
+		border-radius:50%;
+	}
        .card{
 		   border-radius: 0 !important;
 	   }
-
+	   .service-progress{
+		   margin-top: 30px;
+		   padding: 80px 100px;
+	   }
+	   @media(max-width: 992px){
+		   .mobile-none{
+			   display: none;
+		   }
+		   .service-progress{
+			   padding: 60px 40px;
+		   }
+	   }
+	   @media(max-width: 576px){
+		   .service-progress{
+			   padding: 24.5px 26.8px;
+		   }
+		   .sub-title.karl{
+			   margin-top: 40px;
+			   font-size: 22px;
+		   }
+		   .kyu{
+			   font-size: 18px!important;
+		   }
+		   .kyu-2{
+			   font-size: 14px!important;
+		   }
+		   .kyu-3{
+			   font-size: 12px!important;
+		   }
+		   .kyu-img{
+			   width: 50%;
+		   }
+		  
+	   }
     </style>
 	 <link rel="stylesheet" href="../css/mdb.min.css" />
 	 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -84,8 +127,8 @@
 			<div class="container" style="margin-top: 113px;">
 				<div style="position: relative;">
 				  <div class="dot-1"></div>
-				  <div class="dot-2"></div>
-				  <div class="dot-3"></div>
+				  <div class="dot-2 mobile-none"></div>
+				  <div class="dot-3 mobile-none"></div>
 				  <img src="" alt="">
 				  <div style="padding: 10px;padding-top: 57px; color: #060b11">
 					  <div class="row d-flex align-items-center" style="padding: 60px 0px">
@@ -95,10 +138,10 @@
 							  <p class="mt-2" style="font-size: 18px;">극초기 스타트업을 위한 엑셀러레이팅 서비스로,
 								<br>데이터의 단기 및 장기 관리, VC/AC 연결, 컨설팅 등 다양한 서비스를
 							<br>각 스타트업마다 맞춤형으로 제공합니다.</p>
-							  <div class="button mt-5">Get Started</div>
+							  <a href="../main.html" class="button mt-5">Get Started</a>
 						  </div>
 						  <div class="col-lg-6" style="">
-							  <img class="service-img" src="../img\office-business-meeting-5472251_1920.jpg" alt="">
+							  <img class="service-img mobile-none" src="../img\office-business-meeting-5472251_1920.jpg" alt="">
 						  </div>
 					  </div>
 					  
@@ -190,7 +233,7 @@
 					  상품인지 파악한 뒤, 사전예약을 진행할 수 있습니다.
 				  </div>
 			  </div>
-			  <div class="mobile-nopad" style="border: 1px solid #bfbfbf; padding: 80px 100px;">
+			  <div class="service-progress" style="border: 1px solid #bfbfbf;">
 				  <div id="stepProgressBar" class="" style="margin-top: 20px;" >
 					  
 					  <div class="step">
@@ -239,7 +282,7 @@
 			  <div class="row mt-5">
 				  <div class="col-md-6 text-center d-flex justify-content-center">
 					  <div class="content-box mobile-nopad">
-						<p class="font-weight-bold">메인 페이지</p>
+						<p class="font-weight-bold mt-5 mt-lg-0">메인 페이지</p>
 						<p style="color: #8c8c8c">Shift 사이트에 맨 처음 접속할 시 나오는 페이지입니다.</p>
 						<img class="box-img" src="../img\Service UX,UI\로그인한 후 메인페이지 1.png" alt="">
 					  </div>
@@ -248,7 +291,7 @@
 				  </div>
 				  <div class="col-md-6 text-center d-flex justify-content-center">
 					<div class="content-box mobile-nopad">
-						<p class="font-weight-bold">마이페이지</p>
+						<p class="font-weight-bold mt-5 mt-lg-0">마이페이지</p>
 						<p style="color: #8c8c8c">투자자들이 자신의 머니나 투자 현황을<br> 확인할 수 있는 페이지입니다.</p>
 						<img class="box-img" style="bottom: -23px" src="../img\Service UX,UI\마이페이지 홈 2.png" alt="">
 					  </div>
@@ -258,7 +301,7 @@
 				  <div class="row mt-5">
 				  <div class="col-md-6 text-center d-flex justify-content-center">
 					<div class="content-box mobile-nopad">
-						<p class="font-weight-bold">마켓 페이지</p>
+						<p class="font-weight-bold mt-5 mt-lg-0">마켓 페이지</p>
 						<p style="color: #8c8c8c">증권화된 서비스들의 판매 페이지입니다.</p>
 						<img class="box-img" style="" src="../img\Service UX,UI\마켓 1.png" alt="">
 					  </div>
@@ -267,7 +310,7 @@
 				  <div class="col-md-6 text-center d-flex justify-content-center">
 					<div class="content-box mobile-nopad">
 						
-						<p class="font-weight-bold">상품 페이지</p>
+						<p class="font-weight-bold mt-5 mt-lg-0">상품 페이지</p>
 						<p style="color: #8c8c8c;">서비스 또는 상품을 클릭하면 볼 수 있는 페이지입니다.</p>
 						<img class="box-img-2" style="" src="../img\Service UX,UI\마켓-클릭 (1) 2.png" alt="">
 					  
@@ -289,11 +332,11 @@
 						  </p>
 						  <a class="btn" style="color: #17375e;background-color: #fff;padding: 12px 32px;font-size: 16px;text-transform: none;">Contact now ></a>
 					  </div>
-					  <div class="below-title d-flex justify-content-between text-white mt-5">
-						  <div><i class="far fa-check-circle"></i> 데이터 관리 제공</div>
-						  <div><i class="far fa-check-circle"></i> VC/AC 연결</div>
-						  <div><i class="far fa-check-circle"></i> 초기 스타트업의 성장속도 상승</div>
-					  </div>
+					  <div class="below-title text-center d-flex flex-md-row flex-column-reverse justify-content-between text-white mt-3 mt-lg-5" style="border: none">
+						<div class="mt-3 mb-3"><i class="far fa-check-circle"></i> 데이터 관리 제공</div>
+						<div class="mt-3 mb-3"><i class="far fa-check-circle"></i> VC/AC 연결</div>
+						<div class="mt-3 mb-3"><i class="far fa-check-circle"></i> 초기 스타트업의 성장속도 상승</div>
+					</div>
 				  </div>
 			  </section>
 			
@@ -315,7 +358,7 @@
 						  <div class="col-lg-6">
 							  <p style="font-weight: 700;font-size: 18px;">About ENTER</p>
 							  <p class="title mb-5">더 나은 투자<br>더 빠른 성장</p>
-							  <p style="font-size: 18px;">초기 스타트업의 안전하고 빠른 성장을 위한 서비스 제공을 넘어<br>기존의 고인 투자 문화를 타파하는 기업이 되겠습니다.</p>
+							  <p class="sub" style="font-size: 18px;">초기 스타트업의 안전하고 빠른 성장을 위한 서비스 제공을 넘어<br>기존의 고인 투자 문화를 타파하는 기업이 되겠습니다.</p>
 						  </div>
 						  
 					  </div>
@@ -334,7 +377,7 @@
 						스타트업이 안전하고 빠르게 성장할 수 있도록, 투자자들이 좋은 기업을 찾을 수 있도록 징검다리 역할을 할 수 있도록 하겠습니다.
 					</p>
 					<!--나중에 이부분 태그 img로 수정-->
-					<div class="clip-wrap">
+					<div class="clip-wrap mt-lg-0" style="margin-top: 22px;">
 						<img class="img-clip" src="../img/회사소개페이지 그림/people-2569234_1920.jpg" alt="" style="">
 					</div>
 				
@@ -443,24 +486,24 @@
 				</div>
 			</div>
 			<section class="card wow fadeIn" style="background-color: #17375e;margin-top: 100px;">
-				<div class="container" style="padding: 120px 60px">
+				<div class="container karlxyz">
 					<div class="card-body text-white">
 						<div class="row">
 							<div class="col-lg-6 d-flex align-items-center mobile-middle">
-								<div class="row">
-									<img class="col-lg-6" src="..\img\kangwongi.png" alt="" style="width: 100%;border-radius:50%;">
+								<div class="row kyu-img d-flex justify-content-lg-start justify-content-center">
+									<img class="col-lg-8 col-md-6 col-sm-8" src="..\img\kangwongi.png" alt="width: 100%;border-radius:50%;" >
 								</div>
 							</div>
 							<div class="col-lg-6 mobile-text-center">
-								<p class="sub-title" style="color: white;">
-									대표 인사말
+								<p class="sub-title karl" style="color: white;">
+									CEO 인사말
 								</p>
-								<p style="font-size: 40px;">김용운(Kim Yong Un)</p>
-								<div style="font-size: 24px;">
+								<p class="kyu" style="font-size: 40px;">김용운(Kim Yong Un)</p>
+								<div class="kyu-2" style="font-size: 24px;">
 									스타트업의 더 나은 성장<br>
 									투자자의 더 나은 투자를 위해 노력하겠습니다.
 								</div>
-								<div class="mt-3 mobile-text-left" style="font-size: 18px;">
+								<div class="mt-3 mobile-text-left kyu-3 text-center text-lg-start" style="font-size: 18px;">
 									저 또한 스타트업을 진행해보고, 근무도 해보면서 극초기 스타트업의 어려움을 알고 있습니다.<br>
 									그 때의 저를 떠올리며 '이러한 서비스가 있었으면 좋았을 텐데..'하고 생각이 들었던<br>
 									서비스를 구현한 것이 바로 Shift입니다.<br>
