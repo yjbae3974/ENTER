@@ -1,0 +1,142 @@
+.bg-enter{
+    background-color: #101d2d;
+}
+.title-position{
+    padding-top: 287px;
+}
+.company-history{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    color: #D1E9F6;
+}
+.sub-title{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 700;
+    font-family: Noto Sans;
+    font-style: normal;
+}
+.description-font{
+    font-size: 32px;
+    color: #71A3CE;
+}
+.description-font.below{
+    font-size: 24px;
+    color: #c4c4c4;
+    height: 96px;
+}
+.canvas{
+    height: 580px;
+    width: 580px;
+    max-width: 90vw;
+    max-height: 90vw;
+    position: relative;
+}
+.canvas::after{
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+.canvas.description{
+    width: 80px;
+    height: auto;
+}
+.logo{
+    position: absolute;
+    left:50%; transform:translate(-50%,-50%);
+    top: 50%;
+}
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #71A3CE;
+    ;
+}
+.line{
+    position: relative;
+    left: 24px;
+    height: 100px;
+    width: 2px;
+    background-color: #71A3CE;
+}
+.circle-1{
+    position: absolute;
+    width: 66%;
+    height: 66%;
+    border-radius: 50%;
+    border: 2px solid #c4c4c4;
+    left:50%; transform:translateX(-50%);
+}
+.circle-1 div{
+    position: absolute;
+    left:50%;top: 5%; transform:translateX(-50%);
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    color: #fff;
+}
+.circle-2{
+    position: absolute;
+    width: 66%;
+    height: 66%;
+    border-radius: 50%;
+    border: 2px solid #c4c4c4;
+    left:0%;bottom: 0%;
+}
+.circle-2 div{
+    position: absolute;
+    right:50%;bottom: 5%;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    color: #fff;
+}
+.circle-3{
+    position: absolute;
+    width: 66%;
+    height: 66%;
+    border-radius: 50%;
+    border: 2px solid #c4c4c4;
+    right:0%;bottom: 0%;
+}
+.circle-3 div{
+    position: absolute;
+    left:50%;bottom: 5%;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    color: #fff;
+}
+.adjust-mp{
+    margin-top: 120px;
+    padding-bottom: 120px;
+}
+.box{
+    
+    width: 100%;
+    height: 0px;
+    padding-bottom: 65%;
+    border: 1px solid #999999;
+    position: relative;
+}
+.box .content{
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media(max-width: 992px){
+    .adjust-mp{
+        margin-top: 60px;
+        padding-bottom: 60px;
+    }
+    .title-position{
+        padding-top: 187px;
+    }
+}

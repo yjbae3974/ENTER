@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTER-연혁</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+	<!-- Google Fonts Roboto -->
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="../css/mdb.min.css">
+    <link rel="stylesheet" href="../announce/announce.css">
+    <link rel="stylesheet" href="history.css">
+    <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body style="min-height: 100vh;">
+    <div id="load-before"></div>
+    <div class="container-fluid bg-enter" style="min-height: 100vh;">
+        <div class="container title-position">
+            <p class="company-history">Company's HISTORY</p>
+            <div class="row adjust-mp">
+                <div class="col-lg-6 d-flex justify-content-center justify-content-lg-start">
+                    <div>
+                    <p class="sub-title">극초기 스타트업<br> 엑셀러레이팅 서비스 Shift</p>
+                    <p style="margin-top: 30px;color: #bfbfbf;">
+                        ENTER는 2021.4 설립 이후로 지속적으로<br>
+                        스타트업의 성장을 돕고 있습니다.
+                    <div class="canvas mt-5">
+                        <div class="circle-1">
+                            <div>Start-up</div>
+                        </div>
+                        <div class="circle-2">
+                            <div>Investors</div>
+                        </div>
+                        <div class="circle-3">
+                            <div>Company</div>
+                        </div>
+                        <div class="logo text-center d-flex-column">
+                            
+                                <div class="d-flex logo-base">
+                                    <div class="logo-conponent"></div>
+                                    <div class="logo-conponent" style="background-color: #a6d1ee;"></div>
+                                    <div class="logo-conponent" style="background-color: #44719e;"></div>
+                                    <div class="logo-conponent" style="background-color: #17375e;"></div>
+                                  </div>
+                                  <div style="color: #fff;font-size: 30px;font-weight: bold;position: absolute;left:-50%;">ENTER</div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 80px;color: #bfbfbf;">ENTER는 스타트업과 VC/AC를 직접 이어주며<br>
+                        좋은 아이디어가 사업으로의 성장, 발전할 수 있도록 돕습니다.<br>
+                        스타트업과 투자자들간의 새로운 투자 네트워크를 형성하며<br>
+                        Shift를 이용하는 기업들과의 시너지 효과를 도모합니다.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-lg-center mt-5 mt-lg-5">
+                    <div class="canvas description mt-3">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div>
+                        <div class="description-font">2021.04</div>
+                        <div class="description-font below">description</div>
+                        <div class="description-font">2021.06</div>
+                        <div class="description-font below">description</div>
+                        <div class="description-font">2021.07</div>
+                        <div class="description-font below">description</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer"></footer>
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script>
+        
+        $(document).ready(function() {
+            $("#footer").load("../footer.html");
+      $("#load-before").load('../navbar/beforelogin.html');
+      $('#load-after').load('../navbar/afterlogin.html');
+    });
+    $(window).load(function(){
+      $('#연혁').addClass('active');
+    });
+    </script>
+</body>
+</html>

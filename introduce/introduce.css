@@ -259,6 +259,31 @@ text-align: left;
 .card-shift{
     padding: 120px 0px;
 }
+.clip-wrap{
+    position: relative;
+    
+}
+
+@media(min-width: 992px){
+    .clip-wrap{
+        height: 430px;
+    }
+}
+@media(max-width: 992px){
+    .clip-wrap{
+        height: 300px;
+    }
+}
+@media(max-width: 768px){
+    .clip-wrap{
+        height: 250px;
+    }
+}
+@media(max-width: 576px){
+    .clip-wrap{
+        height: 200px;
+    }
+}
 @media(max-width:576px){
     .card-shift{
         padding: 40px 0px!important;
