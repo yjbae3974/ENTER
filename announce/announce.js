@@ -16,7 +16,7 @@ function initMap() {
  function changeLocation(text){
   location.href = text;
  }
-const mobileWidth = '(max-width: 768px)';
+/*const mobileWidth = '(max-width: 768px)';
 const mediaQuery = window.matchMedia(mobileWidth);
 const divtable = document.getElementById('tablediv');
   if(mediaQuery.matches){
@@ -153,4 +153,4 @@ const divtable = document.getElementById('tablediv');
                 <!--Table-->
               </div>
     `
-  }
+  }*/

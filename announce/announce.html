@@ -289,9 +289,9 @@
           style="border-radius: 10em; width: 100%;">
           <div class="card-body p-2">
             <div class="input-group input-group-lg">
-              <input type="text" id="searchWord2" class="form-control form-control-lg rounde bg-transparent" style="border: 0px !important;"
+              <input type="text" id="searchWord3" class="form-control form-control-lg rounde bg-transparent" style="border: 0px !important;"
                 placeholder="검색어를 입력하세요" aria-label="Type Keywords" aria-describedby="basic-addon2" />
-              <span class="input-group-text border-0" id="basic-addon2" onclick="getQuestionData(getQuestionSnapshot());"><i
+              <span class="input-group-text border-0" id="basic-addon2" onclick="getQuestionData2(getQuestionSnapshot());"><i
                   class="fas fa-search fa-lg"></i></span>
             </div>
           </div>
@@ -599,6 +599,29 @@
 </script>
 
 <script>
+function getQuestionData2(Snapshots){
+    window.location.href = "#ex1-tabs-2"
+    const dataArray = new Array();
+    var searchWord = document.getElementById("searchWord3").value;
+    var wordSplit = searchWord.split(/[\s,]+/);
+    Snapshots.then((snapshot) => {
+      snapshot.forEach((doc) => {
+        var title = doc.get("title");
+        var content = doc.get("content");
 
+        if(wordSearch(wordSplit, title) || wordSearch(wordSplit, content)){
+            var temp = new Object();
+            temp.title = title;
+            temp.content = content;
+            temp.num = doc.get("num");
+            //console.log(temp);
+            dataArray.push(temp);
+      
+            makeQuestionTable(dataArray);   
+            setContent(dataArray);   
+        }
+      });
+    });
+  }
 </script>
 </html>
