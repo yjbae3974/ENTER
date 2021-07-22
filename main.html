@@ -32,7 +32,8 @@
         font-size: 32px;
         color: #fff;
         font-weight: 700;
-        
+        min-width: 100%;
+        text-align: center;
 
       }
       .slick-slide{
@@ -48,6 +49,9 @@
       }
       .phone-display{
         display:none;
+      }
+      .title-width{
+        min-height: 1043px;
       }
       @media(min-width:2000px){.container,.container-lg,.container-md,.container-sm,.container-xl,.container-xxl{max-width:1920px!important}}
      
@@ -71,6 +75,9 @@
         }
         .row-lg-reverse{
           flex-direction: row;
+        }
+        .title-width{
+          min-height: unset;
         }
       }
       @media(max-width: 576px){
@@ -102,11 +109,17 @@
         .mmt-5{
           margin-top: 5rem;
         }
+        .title{
+          font-size: 35px;
+        }
         .sub-title{
-          font-size: 30px;
+          font-size: 22px;
         }
         .sub-subtitle{
-          font-size: 28px;
+          font-size: 22px;
+        }
+        .sub-content{
+          font-size: 12px;
         }
       }
     </style>
@@ -148,6 +161,24 @@
           nextArrow2: $('#next2'),
           
           responsive: [
+          {
+              breakpoint: 2000,
+              settings: {
+                arrows: false,
+                centerMode: false,
+                
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 1200,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                
+                slidesToShow: 1
+              }
+            },
             {
               breakpoint: 992,
               settings: {
@@ -178,7 +209,7 @@
     <div class="container-fluid bg-base">
       <div class="container bg-enter" style="padding: 0px;">
         <div class="bg-strip" style="">
-        <div class="row d-flex align-items-center" style="margin-top: 113px;min-height: 1043px;">
+        <div class="row d-flex align-items-center title-width" style="margin-top: 113px;">
           <div class="col-lg-6 mobile-mt adjust-padding">
             <p class="title mobile-white" style="padding-left: 3px;">Shift 서<span class="font-white">비스</span><br>Introdu<span class="font-white">ction</span></p>
             <div style="width: 107px; height: 5px; background-color: #8c8c8c;"></div>
