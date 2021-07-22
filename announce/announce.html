@@ -596,29 +596,31 @@
 </script>
 
 <script>
-function getQuestionData2(Snapshots){
-    window.location.href = "#ex1-tabs-2"
-    const dataArray = new Array();
-    var searchWord = document.getElementById("searchWord3").value;
-    var wordSplit = searchWord.split(/[\s,]+/);
-    Snapshots.then((snapshot) => {
-      snapshot.forEach((doc) => {
-        var title = doc.get("title");
-        var content = doc.get("content");
 
-        if(wordSearch(wordSplit, title) || wordSearch(wordSplit, content)){
-            var temp = new Object();
-            temp.title = title;
-            temp.content = content;
-            temp.num = doc.get("num");
-            //console.log(temp);
-            dataArray.push(temp);
-      
-            makeQuestionTable(dataArray);   
-            setContent(dataArray);   
-        }
-      });
-    });
+  window.onload = function(){
+    var params = new URLSearchParams(location.search);
+    if(params.get('tab') == 2){
+      tab2(); 
+    }
+    else if(params.get('tab') == 3){
+      tab3();
+    }
+  }
+
+  function tab2(){
+    console.log("tab2");
+    $('[href="#ex1-tabs-2"]').tab('show');
+  }
+
+  function tab3(){
+    console.log("tab3");
+    $('[href="#ex1-tabs-3"]').tab('show');
+  }
+
+  function getQuestionData2(Snapshots){
+    document.getElementById("searchWord2").value = document.getElementById("searchWord3").value;
+    getQuestionData(Snapshots);
+    $('[href="#ex1-tabs-2"]').tab('show');
   }
 </script>
 </html>

@@ -197,14 +197,14 @@
               Main Contents
             </div>
             <div class="post-slider mpt-3">
-              <div class="card card-1" id="서비스소개">
+              <div class="card card-1" id="서비스소개" onclick="introduce();">
                 <div class="card-body">
                   <div class="card-text">
                     서비스 소개
                   </div>
                 </div>
               </div>
-              <div class="card card-2" id="공지사항">
+              <div class="card card-2" id="공지사항" onclick="announce();">
                 <div class="card-body">
                   
                   <div class="card-text">
@@ -212,7 +212,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card card-3" id="도움말">
+              <div class="card card-3" id="도움말" onclick="question();">
                 <div class="card-body">
                   
                   <div class="card-text">
@@ -220,7 +220,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card card-4" id="문의사항">
+              <div class="card card-4" id="문의사항" onclick="contact();">
                 <div class="card-body">
                   
                   <div class="card-text">
@@ -365,7 +365,7 @@
 						Shift<br>
 						스타트업 초기 엑셀러레이팅 서비스
 					</p>
-					<a class="btn" style="color: #17375e;background-color: #fff;padding: 12px 32px;font-size: 16px;text-transform: none;">Contact Now ></a>
+					<a class="btn" style="color: #17375e;background-color: #fff;padding: 12px 32px;font-size: 16px;text-transform: none;" onclick="contact();">Contact Now ></a>
 				</div>
 				<div class="below-title text-center d-flex flex-md-row flex-column-reverse justify-content-between text-white mt-3 mt-lg-5" style="border: none">
 					<div class="mt-3 mb-3"><i class="far fa-check-circle"></i> 데이터 관리 제공</div>
@@ -433,6 +433,26 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+
+  function introduce(){
+    console.log("introduce");
+    window.location.href = "introduce/introduce_service.html";
+  }
+
+  function announce(){
+    console.log("announce");
+    window.location.href = "announce/announce.html";
+  }
+
+  function question(){
+    console.log("question");
+    window.location.href = "announce/announce.html?tab=2";
+  }
+
+  function contact(){
+    console.log("contact");
+    window.location.href = "announce/announce.html?tab=3";
+  }
 
 </script>
 </html>
