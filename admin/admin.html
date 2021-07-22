@@ -26,34 +26,39 @@ body{
 }
 .accordion{
   width: 100%;
-  padding: 10px;
-  border: 1px solid #999;
-  border-radius: 5px;
   float: left;
+  font-size: 22px;
+  
 }
-
+.click2edit p{
+  margin-bottom: 0px!important;
+}
 .accordion-title {
-  background-color: #999;
-  color: white;
+  background-color: #fff;
+  color: #060b11;
   width: 100%;
   float: left;
-  padding: 5px;
-  font-weight: bold;
-  border-radius: 5px;
+  padding-top: 5px;
+  padding-left: 5%;
+  padding-right: 5%;
   margin-top: 5px;
+  height: 80px;
+  border-bottom: 1px solid #c9c9c9;
 }
-.accordion-title.active {
-  background-color: #999;  
-    border-radius: 5px 5px 0 0;
+.accordion-title.active .rotate {
+  -ms-transform: rotate(-180deg); 
+  transform: rotate(180deg);
 }
 .accordion-content {
   display: none;
-  border: 1px solid #999;
+  background-color: #f9f9f9;
   float: left;
   width: 100%;
-  padding: 5px;
+  padding: 20px;
+  font-size: 18px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
-
 
 
       th{
@@ -543,8 +548,9 @@ body{
   <div class="container" style="margin-top: 100px; overflow:auto;">
     {{#contents}}
     <section class="accordion">
-      <button class="accordion-title">
-        <div class="col-10"><div class="click2edit" id="title{{num}}"></div></div>
+      <button class="accordion-title d-flex justify-content-between align-items-center">
+        <div><div class="click2edit" id="title{{num}}"></div></div>
+        <img class="rotate" src="../img/down.png" alt="">
       </button>
       <div class="accordion-content">
         <article class="article2edit">
