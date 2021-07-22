@@ -309,11 +309,11 @@
             <p class="title" style="color:#060B11">Contact Us</p>
             <div class="d-flex mt-1" style="align-self: flex-start;flex-wrap: wrap;color: #bfbfbf">
               <label class="checkbox-container">질문사항
-                  <input type="checkbox" checked="checked">
+                  <input type="checkbox"  checked="checked" id="check1">
                   <span class="checkmark" style="border-color: #efefef;"></span>
                 </label>
                 <label class="checkbox-container mx-3">건의사항
-                  <input type="checkbox">
+                  <input type="checkbox" id="check2">
                   <span class="checkmark" style="border-color: #efefef;"></span>
                 </label>
               
@@ -321,17 +321,17 @@
           <form style="color: #060B11;">
             <!-- Email input -->
             <p class="font-weight-bold" style="font-size: 14px;">Title</p>
-            <input type="text" class="form-control form-rounded" placeholder="Write the Title" style="padding: 10px 20px;">
+            <input type="text" id="title" class="form-control form-rounded" placeholder="Write the Title" style="padding: 10px 20px;">
           
             <p class="font-weight-bold mt-3" style="font-size: 14px;">MESSAGE</p>
-            <textarea name="" id="" cols="30" rows="8" placeholder="Your Message"></textarea>
+            <textarea name="" id="inquiry" cols="30" rows="8" id="inquiry" placeholder="Your Message"></textarea>
             <p class="font-weight-bold mt-3" style="font-size: 14px;">NAME</p>
             <div class="row">
               <div class="col-8">
-                <input type="text" class="form-control form-rounded" placeholder="Your email" style="padding: 10px 20px;">
+                <input type="text" class="form-control form-rounded" id="email" placeholder="Your email" style="padding: 10px 20px;">
               </div>
               <div class="col-4" style="padding: 0px 20px;">
-                <button type="submit" class="btn-rounded text-white text-center send-button" style="font-size: 18px;height: 100%;background-color: #17375E;">Send</button>
+                <button type='button' class="btn-rounded text-white text-center send-button" style="font-size: 18px;height: 100%;background-color: #17375E;" onclick="contact();">Send</button>
               </div>
             </div>
             
@@ -621,6 +621,55 @@
     document.getElementById("searchWord2").value = document.getElementById("searchWord3").value;
     getQuestionData(Snapshots);
     $('[href="#ex1-tabs-2"]').tab('show');
+  }
+
+  function contact(){
+    var db = firebase.firestore();
+    var type = "";
+    var checked = 0;
+    if(document.getElementById('check1').checked){
+      checked = 1;
+      type = "질문사항";
+    }
+    else if(document.getElementById('check1').checked){
+      checked = 2;
+      type = "건의사항";
+    }
+    //alert("button click "+checked);
+
+    var email = document.getElementById('email').value;
+    var title = document.getElementById('title').value;
+    var inquiry = document.getElementById('inquiry').value;
+
+    if(title=="" || title==null){
+      alert("제목을 입력해주세요");
+    }
+    else if(type=="" || type==null){
+      alert("질문/건의사항에 체크해주세요");
+    }
+    else if(inquiry=="" || inquiry==null){
+      alert("문의사항을 입력해주세요");
+    }
+    else if(email=="" || email==null){
+      alert("이메일을 입력해주세요");
+    }
+    else{
+      db.collection("contact").add({
+        type : type,
+        title : title,
+        email : email,
+        inquiry : inquiry
+      })
+      .then(function(docRef) {
+          alert("제출이 완료되었습니다");
+          document.getElementById('email').value = "";
+          document.getElementById('title').value = "";
+          document.getElementById('inquiry').value = "";
+      })
+      .catch(function(error) {
+          console.error("Error adding document: ", error);
+      }); 
+    }
   }
 </script>
 </html>
