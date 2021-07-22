@@ -37,6 +37,18 @@
 		   margin-top: 30px;
 		   padding: 80px 100px;
 	   }
+	   .opinion-title{
+		position: absolute;top: 100px;left: 0%;opacity: 0.35;
+	   }
+	   .upper-vision{
+		position: relative;padding-top: 100px;padding-bottom:100px;
+	   }
+	   .sub-subtitle.detail{
+		   font-size: 40px;
+	   }
+	   .lh{
+		   line-height: 40px;
+	   }
 	   @media(max-width: 992px){
 		   .mobile-none{
 			   display: none;
@@ -44,6 +56,7 @@
 		   .service-progress{
 			   padding: 60px 40px;
 		   }
+		   
 	   }
 	   @media(max-width: 576px){
 		   .service-progress{
@@ -64,6 +77,20 @@
 		   }
 		   .kyu-img{
 			   width: 50%;
+		   }
+		   .opinion-title{
+			   width: 60px;
+			   top: 100px;
+			   left: 0px;
+		   }
+		   .box-content{
+			   font-size: 12px;
+		   }
+		   .upper-vision{
+			   padding-top: 70px;
+		   }
+		   .lh{
+			   line-height: 24px;
 		   }
 		  
 	   }
@@ -135,10 +162,10 @@
 						  <div class="col-lg-6">
 							  <p class="about-shift">About Shift</p>
 							  <div class="title">Start-up<br>엑셀러레이팅<br>서비스</div>
-							  <p class="mt-2" style="font-size: 18px;">극초기 스타트업을 위한 엑셀러레이팅 서비스로,
+							  <p class="mt-2 below-title-content" style="">극초기 스타트업을 위한 엑셀러레이팅 서비스로,
 								<br>데이터의 단기 및 장기 관리, VC/AC 연결, 컨설팅 등 다양한 서비스를
 							<br>각 스타트업마다 맞춤형으로 제공합니다.</p>
-							  <a href="../main.html" class="button mt-5">Get Started</a>
+							  <a href="../main.html" class="button mt-5" style="position: relative; top: 16px;">Get Started</a>
 						  </div>
 						  <div class="col-lg-6" style="">
 							  <img class="service-img mobile-none" src="../img\office-business-meeting-5472251_1920.jpg" alt="">
@@ -383,9 +410,9 @@
 				
 			</div>
 			<div class="container-fluid" style="background-color: #f9f9f9;min-height: 600px;margin-top: 100px;">
-				<div class="container" style="position: relative;padding-top: 100px;padding-bottom:100px;">
-					<img src="..\img\Company_vision.png" style="position: absolute;top: 100px;left: 0%;opacity: 0.35;" alt="">
-					<div style="padding: 70px;">
+				<div class="container upper-vision" style="">
+					<img class="opinion-title" src="..\img\Company_vision.png" style="" alt="">
+					<div class="company-vision">
 						<div class="sub-title" style="
 						font-family: Inter;
 						font-style: normal;
@@ -394,13 +421,13 @@
 						font-feature-settings: 'salt' on, 'liga' off;
 						line-height: 4rem;">
 						Our Company's <br>Vision</div>
-						<div class="mt-2" style="color: #18191f;">회사의 비전</div>
+						<div class="mt-2" style="color: #18191f;">ENTER의 비전</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-5 mobile-nopad" style="">
 							<div class="company-box" style="position: relative;">
 								<img class="opnion-icon" src="..\img\Company_vision.png" alt="">
-								<div class="box-content mb-5" style="min-height: 160px;"><!--min-height: 5줄로 잡음-->
+								<div class="box-content mb-lg-5 mb-0" style="min-height: 160px;"><!--min-height: 5줄로 잡음-->
 									투자자들에게 성장 가능성이 있는 스타트업을 직접 연결해줌으로써, 기존 네트워크 안
 									에서만 활동하는 투자자들이 놓칠 수 있는 투자상품 및 서비스를 알립니다.
 								</div>
@@ -416,7 +443,7 @@
 							<div class="col-xl-10">
 								<div class="company-box mobile-nomar" style="position: relative;margin-left: 50px">
 									<img class="opnion-icon" src="..\img\Company_vision.png" alt="">
-									<div class="box-content mb-5" style="min-height: 10rem;"><!--min-height: 8줄로 잡음-->
+									<div class="box-content mb-lg-5 mb-4" style="min-height: 10rem;"><!--min-height: 8줄로 잡음-->
 										극초기 스타트업은 실패 가능성도 높고, 시간과 자본 등이 부족하여 투자받기 힘듭니다.
 										투자를 받음으로써 성장이 가능한데, 투자를 위해서는 성장을 해야하는 모순이 발생합니다.
 										ENTER는 이러한 모순을 해결하기 위해 데이터 관리 및 맞춤형 컨설팅 등 처음의 성장을
@@ -434,7 +461,7 @@
 							<div class="col-xl-8 col-lg-10 mt-5">
 								<div class="company-box" style="position: relative;">
 									<img class="opnion-icon" src="..\img\Company_vision.png" alt="">
-									<div class="box-content mb-5" style="min-height: 160px;"><!--min-height: 5줄로 잡음-->
+									<div class="box-content mb-lg-5 mb-0" style="min-height: 160px;"><!--min-height: 5줄로 잡음-->
 										극초기 스타트업의 시작과 성장을 ENTER에서 할 수 있도록,<br>
 										엑셀러레이팅 서비스의 대명사가 되겠습니다.
 									</div>
@@ -454,31 +481,31 @@
 				</div>
 			</div>
 			<div class="container" style="margin-top: 100px;">
-				<p class="sub-title">Company Detail</p>
+				<p class="sub-title mb-lg-3 mb-5">Company Detail</p>
 				<div class="row">
 					<div class="col-lg-6">
 						<!--나중에 이부분 태그 img로 수정-->
 					<img src="../img\회사소개페이지 그림\startup-593304_1920.jpg" alt="" style="height: 480px;width: 100%; object-fit: cover;background-color: #c4c4c4;">
 					</div>
-					<div class="col-lg-6 d-flex align-items-center">
+					<div class="col-lg-6 d-flex align-items-center mt-lg-0 mt-3">
 						<div>
 							<p class="sub-subtitle">Shift</p>
-						<p class="sub-content mt-5" style="margin-bottom: 100px;color: #000;line-height: 40px;">
+						<p class="sub-content mt-lg-5 mt-1 mb-5 lh" style="color: #000;">
 							스타트업 초기 엑셀러레이팅 서비스인 Shift입니다.<br>
-							기존 금융 네트워크에 진입하지 못하거나, 아이디어는 좋지만 자본이 없어서<br>
+							기존 금융 네트워크에 진입하지 못하거나,<br> 아이디어는 좋지만 자본이 없어서<br>
 							성장하지 못하는 스타트업을 위해 만든 서비스입니다.<br>
-							이러한 스타트업을 투자자들과 연결해주고, 다른 기업들과 협업관계를 가질 수 있<br>
-							도록 지원해줌으로써 투자 네트워크를 형성해줍니다.
+							이러한 스타트업을 투자자들과 연결해주고,<br> 다른 기업들과 협업관계를 가질 수 있
+							도록 지원해줌으로써<br> 투자 네트워크를 형성해줍니다.
 						</p>
 						<a href="" class="" style="color: #17375e;font-weight: 700;">More Detail ></a>
 						</div>
 						
 					</div>
 					<div class="row" style="margin-top: 100px;">
-						<div class="col-lg-6 sub-subtitle d-flex align-items-center" style="font-size: 40px;">
+						<div class="col-lg-6 sub-subtitle detail d-flex align-items-center mb-lg-0 mb-5">
 							Company's <br>promotion Phrase
 						</div>
-						<div class="col-lg-6 sub-content d-flex align-items-center" style="color: #000;line-height: 40px;">단순 스타트업 지원 서비스를 제공하는 회사가 아닌<br>
+						<div class="col-lg-6 sub-content d-flex align-items-center lh" style="color: #000;">단순 스타트업 지원 서비스를 제공하는 회사가 아닌<br>
 						한국의 실리콘밸리가 되겠습니다.</div>
 					</div>
 					<img class="mt-5" src="../img\회사소개페이지 그림\san-francisco-1258848_1920.jpg" alt="" style="max-height: 480px;width: 100%; object-fit: cover;">

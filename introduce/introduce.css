@@ -472,7 +472,7 @@ text-align: left;
     overflow: hidden;
     background-color: #fff;
     opacity: 0.8;
-    z-index: 1;
+    z-index: 2;
     
 }
 .sticky-nav{
@@ -555,10 +555,29 @@ text-align: left;
     .sub-title{
         font-size: 22px;
     }
+    .sub-subtitle{
+        font-size: 22px!important;
+    }
     .sub-content{
         font-size: 12px;
     }
     .sub{
         font-size: 16px!important;
+    }
+}
+@media(min-width: 576px){
+    .company-vision{
+        padding: 70px;
+    }
+}
+.below-title-content{
+    font-size: 18px;
+}
+@media(max-width: 576px){
+    .company-vision{
+        padding: 30px;
+    }
+    .below-title-content{
+        font-size: 16px;
     }
 }
