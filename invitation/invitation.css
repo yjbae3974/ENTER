@@ -17,7 +17,7 @@
     left: 0px;
 }
 .logo{
-    background-color: #17375e;
+    background-color: #186aff;
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -55,7 +55,7 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;;
-    border: 3px solid #17375e;
+    border: 3px solid #186aff;
 }
 .inner-img{
     width: 100%; 
@@ -71,23 +71,23 @@
 .your-email{
     font-size: 20px;
     border-radius: 10px;
-    background-color: #17375e;
+    background-color: #186aff;
     color: #fff;
     text-align: center;
     padding: 9px 20px;
 }
 .invitefriend{
-    color: #17375e;
+    color: #186aff;
     font-weight: 700;
     font-family: 'Lato';
     font-size: 18px
 }
 .hreficon{
     font-size: 24px;
-    color: #17375e;
+    color: #186aff;
 }
 .hreficon:hover{
-    color: #17375e;
+    color: #186aff;
 }
 .hr-8{
     position: absolute;
